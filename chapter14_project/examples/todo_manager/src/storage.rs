@@ -1,6 +1,6 @@
 use crate::todo::Todo;
 use serde_json;
-use std::fs::{self, File};
+use std::fs::File;
 use std::io::{Read, Write};
 use std::path::{Path, PathBuf};
 use thiserror::Error;
@@ -74,6 +74,15 @@ impl TodoStorage {
         self.todos[id].mark_as_done();
         Ok(())
     }
+    
+    /// 将待办事项标记为未完成
+    pub fn mark_undone(&mut self, id: usize) -> Result<(), StorageError> {
+        if id >= self.todos.len() {
+            return Err(StorageError::InvalidId(id));
+        }
+        self.todos[id].mark_as_undone();
+        Ok(())
+    }
 
     /// 删除一个待办事项
     pub fn remove(&mut self, id: usize) -> Result<(), StorageError> {
@@ -82,5 +91,13 @@ impl TodoStorage {
         }
         self.todos.remove(id);
         Ok(())
+    }
+    
+    /// 获取待办事项的可变引用
+    pub fn get_todo_mut(&mut self, id: usize) -> Result<&mut Todo, StorageError> {
+        if id >= self.todos.len() {
+            return Err(StorageError::InvalidId(id));
+        }
+        Ok(&mut self.todos[id])
     }
 }
