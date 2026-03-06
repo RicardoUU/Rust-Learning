@@ -1,6 +1,6 @@
 # Rust 学习工程
 
-欢迎来到 Rust 学习工程！这个项目旨在帮助你系统地学习 Rust 编程语言，从基础概念到高级特性。
+欢迎来到 Rust 学习工程！这个项目旨在帮助你系统地学习 Rust 编程语言，从基础概念到高级特性，并逐步进入 Rust + WebAssembly（Wasm）跨端开发。
 
 ## 项目结构
 
@@ -25,6 +25,18 @@
 12. [并发编程](./chapter12_concurrency/README.md) - 线程、消息传递、共享状态
 13. [Rust 高级特性](./chapter13_advanced/README.md) - 不安全 Rust、高级特征
 14. [实战项目](./chapter14_project/README.md) - 综合应用所学知识
+15. [Wasm 学习路线图](./WASM_Learning_Roadmap.md) - Rust WebAssembly 学习路径与资源
+16. [Wasm 最小示例](./examples/wasm-hello/README.md) - 从零运行第一个 Rust + Wasm 项目
+
+## Wasm 学习建议路线
+
+推荐按下面顺序学习：
+
+1. 先完成 Rust 基础章节，尤其是所有权、模块、错误处理、泛型与特征。
+2. 阅读 [WASM_Learning_Roadmap.md](./WASM_Learning_Roadmap.md)，了解 WebAssembly 的整体学习路径。
+3. 跟着 [Wasm 最小示例](./examples/wasm-hello/README.md) 完成环境安装与第一次构建。
+4. 学习 `wasm-bindgen`、`wasm-pack`、`web-sys` 的使用方式。
+5. 再继续尝试 DOM 操作、小游戏、计算器等小项目。
 
 ## 如何使用本项目
 
@@ -33,6 +45,7 @@
 3. 研究并运行示例代码
 4. 尝试修改示例代码，实验不同的用法
 5. 完成章节练习（如果有）
+6. 学完 Rust 基础后，进入 Wasm 路线继续扩展
 
 ## 运行代码
 
@@ -46,10 +59,13 @@ cd chapter01_basics/examples/hello_world
 cargo run
 ```
 
+Wasm 示例建议参考各自目录下的 README 文档执行。
+
 ## 学习资源
 
 - [Rust 官方文档](https://doc.rust-lang.org/)
 - [Rust 程序设计语言（中文版）](https://kaisery.github.io/trpl-zh-cn/)
 - [Rust by Example（中文版）](https://rustwiki.org/zh-CN/rust-by-example/)
+- [Rust and WebAssembly Book](https://rustwasm.github.io/docs/book/)
 
 祝你学习愉快！
